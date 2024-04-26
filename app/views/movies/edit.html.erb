@@ -1,0 +1,11 @@
+<h2>edit Movie</h2>
+<%= form_tag movies_path, :method => :update, :class => 'form' do %>
+    <%= hidden_tag :authenticity_token, form_authenticity_token %>
+    <%= label :movie, :title, 'Title', :class => 'form-control'%>
+    <%= text_field :movie, :title, :class => 'form-control' %>
+    <%= label :movie, :rating, 'Rating', :class => 'form-control'%>
+    <%= select :movie, :rating, ['G','PG','PG-13','R','NC-17'], :class => 'form-control' %>
+    <%= label :movie, :release_date, 'Release On' %>
+    <%= date_select :movie, :release_date, :class => 'form-control'%>
+    <%= submit_tag 'Save Changes'%>
+<% end %>
