@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
   end
   def update
     @movie = Movie.find params[:id]
-    if @movie.update_attributes(movie_params)
+    if (@movie.update(movie_params))
       redirect_to movies_path, :notice => "#{@movie.title} updated."
     else
       flash[:alert] = "Movie could not be updated: " +
